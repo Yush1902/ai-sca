@@ -1,0 +1,5 @@
+project_name: ai-sca-agent
+sca_tool: snyk
+output_file: snyk_results.json
+branch_prefix: fix/sca-patch
+base_branch: main
