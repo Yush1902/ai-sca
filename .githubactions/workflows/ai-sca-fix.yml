@@ -28,6 +28,13 @@ jobs:
       - name: Install Snyk CLI
         run: npm install -g snyk
 
+      - name: Print working directory
+        run: pwd
+
+      - name: List files
+        run: ls -R
+  
+
       - name: Run SCA Scan
         run: ./scripts/scan_sca.sh
 
