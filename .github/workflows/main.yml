@@ -13,7 +13,7 @@ jobs:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       GIT_PAT: ${{ secrets.GIT_PAT }}
-      GIT_PATH: ${{secreats.GIT_PATH}}
+      GIT_PATH: ${{secrets.GIT_PATH}}
 
     steps:
       - name: Checkout Code
