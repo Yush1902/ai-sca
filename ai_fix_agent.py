@@ -3,7 +3,7 @@ from utils import parser, openai_helper
 import openai
 import os
 
-openai.api_key = os.getenv("API_KEY")
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 
 with open("snyk_results.json") as f:
