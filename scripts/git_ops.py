@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 branch = "fix/sca-patch"
 
@@ -7,6 +8,9 @@ def run(cmd):
 
 run('git config --global user.email "github-actions[bot]@users.noreply.github.com"')
 run('git config --global user.name "github-actions[bot]"')
+
+token = os.environ.get("GH_PAT")
+
 run(f"git checkout -b {branch}")
 run("mv requirements_fixed.txt requirements.txt")
 run("git add requirements.txt")
