@@ -1,0 +1,41 @@
+name: AI-SCA-Security-Scan
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  ai-sca-fix:
+    runs-on: ubuntu-latest
+
+    env:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - name: ⬇️ Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Requirements
+        run: pip install -r requirements.txt
+
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
+      - name: Run SCA Scan
+        run: ./scripts/scan_sca.sh
+
+      - name: AI Fix Vulnerabilities
+        run: python3 ai_fix_agent.py
+
+      - name: Commit & Push Fixes
+        run: python3 scripts/git_ops.py
+        env:
+          GIT_COMMITTER_NAME: GitHub Actions Bot
+          GIT_COMMITTER_EMAIL: actions@github.com
