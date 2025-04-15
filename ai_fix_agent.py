@@ -1,5 +1,10 @@
 import json
 from utils import parser, openai_helper
+import openai
+import os
+
+openai.api_key = os.getenv("API_KEY")
+
 
 with open("snyk_results.json") as f:
     scan_data = json.load(f)
