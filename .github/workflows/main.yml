@@ -13,6 +13,7 @@ jobs:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       GIT_PAT: ${{ secrets.GIT_PAT }}
+      GIT_PATH: ${{secreats.GIT_PATH}}
 
     steps:
       - name: Checkout Code
@@ -42,7 +43,7 @@ jobs:
         run: |
           git config --global user.name "Yush@1902"
           git config --global user.email "yaseen.md2600@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GIT_PAT }}@github.com/Yush1902/ai-sca.git
+          git remote set-url origin https://x-access-token:${{ secrets.GIT_PATH }}@github.com/Yush1902/ai-sca.git
 
       - name: Commit & Push Fixes
         run: python3 scripts/git_ops.py
