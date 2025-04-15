@@ -14,7 +14,7 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      - name: ⬇️ Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -35,7 +35,7 @@ jobs:
         run: ls -R
 
       - name: Run SCA Scan
-        run: ./scripts/scan_sca.sh
+        run: ./scripts/scan-sca.sh
 
       - name: AI Fix Vulnerabilities
         run: python3 ai_fix_agent.py
