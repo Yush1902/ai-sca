@@ -9,7 +9,7 @@ def run(cmd):
 run('git config --global user.email "github-actions[bot]@users.noreply.github.com"')
 run('git config --global user.name "github-actions[bot]"')
 
-token = os.environ.get("GH_PAT")
+token = os.environ.get("GIT_PAT")
 run(f'git remote set-url origin https://x-access-token:{token}@github.com/Yush1902/ai-sca.git')
 
 run(f"git checkout -b {branch}")
