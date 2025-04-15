@@ -11,6 +11,8 @@ with open("snyk_results.json") as f:
 
 summary = parser.extract_vulnerable_packages(scan_data)
 
+print(summary)
+
 fixed_requirements = openai_helper.get_fixes_from_ai(summary)
 
 with open("requirements_fixed.txt", "w") as f:
