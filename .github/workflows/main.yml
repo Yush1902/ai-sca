@@ -38,7 +38,7 @@ jobs:
         run: ./scripts/scan-sca.sh
 
       - name: Run openAI Helper
-        run: python3 /utils/openai_helper.py
+        run: python3 utils/openai_helper.py
 
       - name: AI Fix Vulnerabilities
         run: python3 ai_fix_agent.py
