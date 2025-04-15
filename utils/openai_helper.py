@@ -13,4 +13,4 @@ def get_fixes_from_ai(vuln_summary: str) -> str:
         ]
     )
     return response['choices'][0]['message']['content']
-print(get_fixes_from_ai())
+
