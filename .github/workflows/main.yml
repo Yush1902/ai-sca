@@ -40,8 +40,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "Yush@1902"
+          git config --global user.email "yaseen.md2600@gmail.com"
           git remote set-url origin https://x-access-token:${{ secrets.GIT_PAT }}@github.com/Yush1902/ai-sca.git
 
       - name: Commit & Push Fixes
