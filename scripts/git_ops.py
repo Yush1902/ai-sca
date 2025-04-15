@@ -1,6 +1,9 @@
 import subprocess
 import os
 
+
+token = os.environ.get("GIT_PAT")
+
 branch = "fix/sca-patch"
 
 def run(cmd):
