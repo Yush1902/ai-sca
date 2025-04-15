@@ -41,7 +41,7 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "Yush@1902"
+          git config --global user.name "Yush1902"
           git config --global user.email "yaseen.md2600@gmail.com"
           git remote set-url origin https://x-access-token:${{ secrets.GIT_PATH }}@github.com/Yush1902/ai-sca.git
 
