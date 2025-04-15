@@ -29,23 +29,21 @@ jobs:
       - name: Install Snyk CLI
         run: npm install -g snyk
 
-      - name: Print working directory
-        run: pwd
-
-      - name: List files
-        run: ls -R
-
       - name: Run SCA Scan
         run: ./scripts/scan-sca.sh
 
-      - name: Run openAI Helper
+      - name: Run OpenAI Helper
         run: python3 utils/openai_helper.py
 
       - name: AI Fix Vulnerabilities
         run: python3 ai_fix_agent.py
 
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GIT_PAT }}@github.com/Yush1902/ai-sca.git
+
       - name: Commit & Push Fixes
         run: python3 scripts/git_ops.py
-        env:
-          GIT_COMMITTER_NAME: GitHub Actions Bot
-          GIT_COMMITTER_EMAIL: actions@github.com
+
