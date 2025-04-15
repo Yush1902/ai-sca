@@ -5,6 +5,8 @@ branch = "fix/sca-patch"
 def run(cmd):
     subprocess.run(cmd, shell=True, check=True)
 
+run('git config --global user.email "github-actions[bot]@users.noreply.github.com"')
+run('git config --global user.name "github-actions[bot]"')
 run(f"git checkout -b {branch}")
 run("mv requirements_fixed.txt requirements.txt")
 run("git add requirements.txt")
