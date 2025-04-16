@@ -6,7 +6,7 @@ def run(cmd):
     print(f"Running: {cmd}")
     subprocess.run(cmd, shell=True, check=True)
 
-token = os.environ.get("GIT_PATH")
+token = os.environ.get("GIT_PAT")
 if not token:
     print("ERROR: GIT_PAT environment variable is not set.")
     sys.exit(1)
