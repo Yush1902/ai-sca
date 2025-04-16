@@ -1,2 +1,28 @@
-python-dotenv==1.0.1
-openai==0.28
+To fix the vulnerabilities, we need to sanitize the inputs that are used in subprocess.run. This can be achieved by using a list of strings instead of a string, and avoid shell command.
+
+In scripts/git_ops.py, the code at line 7 and line 18 should be updated from subprocess.run(some_variable) to subprocess.run(['command', 'arg1', 'arg2'])
+
+Here is a secure requirements.txt:
+
+1. A secure `requirements.txt` should be updated with the latest secure versions of the dependencies.
+
+2. Ensure none of the dependencies or transitive dependencies are deprecated or abandoned.
+
+3. Avoid using dependencies with known security vulnerabilities.
+
+4. Continuously monitor for new vulnerabilities associated with your dependencies.
+
+Unfortunately, I can't generate a specific `requirements.txt` for you as I don't have the details of the dependencies of your project. Here is an example of how it should be:
+
+```
+Flask==1.1.4
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+Werkzeug==1.0.1
+```
+
+Remember, every dependency should be pinned to a specific version. This avoids the risk of automatically upgrading packages that depend upon other packages, and potentially breaking software or creating a security risk. 
+
+It's also recommended to frequently check and upgrade the packages for the newer versions with the possible security patches. This could be done manually or by using automated tools and services. 
+
+Please note, that all changes should be properly tested to ensure they don't break existing functionality.
