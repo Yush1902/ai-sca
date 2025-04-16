@@ -13,8 +13,8 @@ jobs:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       GIT_PAT: ${{ secrets.GIT_PAT }}
-      GIT_COMMITTER_NAME: GitHub Actions Bot
-      GIT_COMMITTER_EMAIL: actions@github.com
+      GIT_COMMITTER_NAME: github-actions[bot]
+      GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
 
     steps:
       - name: Checkout Code
