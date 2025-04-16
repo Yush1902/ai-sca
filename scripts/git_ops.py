@@ -11,8 +11,9 @@ if not token:
     print("ERROR: GIT_PAT environment variable is not set.")
     sys.exit(1)
 
-run('git config --global user.email "yaseen.md2600@gmail.com"')
-run('git config --global user.name "yush1902"')
+run('git config --global user.email "github-actions[bot]@users.noreply.github.com"')
+run('git config --global user.name "github-actions[bot]"')
+
 
 run(f'git remote set-url origin https://x-access-token:{token}@github.com/Yush1902/ai-sca.git')
 
