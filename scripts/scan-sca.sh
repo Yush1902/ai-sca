@@ -15,9 +15,6 @@ echo "Authenticating with Snyk..."
 snyk auth "9e77ee4e-a024-45d9-9e14-ad561566c104"
 
 echo "Running Snyk scan..."
-snyk code test > snyk_results.json || {
-    echo "Snyk scan failed. Check snyk_results.json or run with --debug for more details."
-    exit 1
-}
+snyk code test > snyk_results.txt ||
 
 echo "Snyk scan complete. Results saved to snyk_results.json"

@@ -1,0 +1,24 @@
+
+Testing /home/yaseen.md/AI-Projects/SCA-Agent ...
+
+ ✗ [Medium] Command Injection 
+   Path: scripts/git_ops.py, line 7 
+   Info: Unsanitized input from an environment variable flows into subprocess.run, where it is used as a shell command. This may result in a Command Injection vulnerability.
+
+ ✗ [Medium] Command Injection 
+   Path: scripts/git_ops.py, line 17 
+   Info: Unsanitized input from an environment variable flows into subprocess.run, where it is used as a shell command. This may result in a Command Injection vulnerability.
+
+
+✔ Test completed
+
+Organization:      yush1902
+Test type:         Static code analysis
+Project path:      /home/yaseen.md/AI-Projects/SCA-Agent
+
+Summary:
+
+  2 Code issues found
+  2 [Medium] 
+
+
